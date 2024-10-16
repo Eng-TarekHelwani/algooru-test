@@ -8,11 +8,23 @@ Run
 composer install
 ```
 
+Note: You might have to run this command in case of errors
+
+```bash
+composer install --ignore-platform-req=ext-http
+```
+
 then
+
+```bash
+php artisan migrate
+```
 
 ```bash
 php artisan serve
 ```
+
+You might access the mysql database through phpmyadmin http://localhost/phpmyadmin/
 
 Make sure you have mysql installed (I was using XAMPP)
 
