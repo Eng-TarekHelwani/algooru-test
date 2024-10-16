@@ -1,0 +1,27 @@
+services:
+
+    edtech:
+        container_name: algooru-edtech-app
+        build: .
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - 9000:80
+        env_file:
+            - .env.docker
+
+    mysql_db:
+        container_name: algooru-edtech-database
+        image: mysql:8.0
+        ports:
+            - 3306:3306
+        env_file:
+            - .env.docker
+
+    phpmyadmin:
+        container_name: algooru-edtech-phpmyadmin
+        image: phpmyadmin:latest
+        ports:
+            - 9001:80
+        environment:
+            - PMA_ARBITRARY=1
